@@ -1,0 +1,48 @@
+
+package poi;
+
+message Gps{
+  required double lng = 1;
+  required double lat = 2;
+  optional double height = 3;
+  optional int32 speed = 4;
+  optional int32 direction = 5;
+  optional int32 color = 6;
+  optional int32 time = 7;
+}
+
+message Clouds {
+  required Gps gps = 1;
+  required string username = 2;
+}
+
+message Mstreet{
+  required Gps gps = 1;
+  required int32 id = 2;
+  required string username = 3;
+  required int32 level_height = 4;
+  required string city = 5;
+  required int32 onewany_dir = 6;
+  required int32 zoomlayer = 7;
+}
+
+message Mark{
+  required Gps gps = 1;
+  required int32 id = 2;
+  required int32 type = 3;
+  optional string memo = 4;
+}
+
+message Customer{
+  required Gps gps = 1;
+  required string picname = 2;
+  required string username = 3;
+  optional string memo = 4;
+
+  message Rsource{
+    required int32 type = 1;
+    required string url = 2;
+  }
+
+  optional Rsource res = 5;
+}
